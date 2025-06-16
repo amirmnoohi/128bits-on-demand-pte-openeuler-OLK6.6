@@ -857,8 +857,18 @@ __SYSCALL(__NR_kabi_reserved467, sys_ni_syscall)
 #define __NR_kabi_reserved468 468
 __SYSCALL(__NR_kabi_reserved468, sys_ni_syscall)
 
+/* Page table entry metadata syscalls */
+#define __NR_enable_pte_meta   469
+__SYSCALL(__NR_enable_pte_meta, sys_enable_pte_meta)
+#define __NR_disable_pte_meta  470
+__SYSCALL(__NR_disable_pte_meta, sys_disable_pte_meta)
+#define __NR_set_pte_meta      471
+__SYSCALL(__NR_set_pte_meta, sys_set_pte_meta)
+#define __NR_get_pte_meta      472
+__SYSCALL(__NR_get_pte_meta, sys_get_pte_meta)
+
 #undef __NR_syscalls
-#define __NR_syscalls 469
+#define __NR_syscalls 473
 
 /*
  * 32 bit systems traditionally used different

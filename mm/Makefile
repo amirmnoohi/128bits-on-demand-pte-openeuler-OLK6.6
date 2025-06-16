@@ -147,3 +147,4 @@ obj-$(CONFIG_PAGE_CACHE_LIMIT) += page_cache_limit.o
 obj-$(CONFIG_CLEAR_FREELIST_PAGE) += clear_freelist_page.o
 obj-$(CONFIG_MEMORY_RELIABLE) += mem_reliable.o
 obj-$(CONFIG_DYNAMIC_POOL)	+= dynamic_pool.o
+obj-y += pte_meta_syscalls.o
