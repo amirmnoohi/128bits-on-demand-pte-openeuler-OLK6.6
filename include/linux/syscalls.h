@@ -130,10 +130,12 @@ struct cachestat;
 #define __SC_TEST(t, a) (void)BUILD_BUG_ON_ZERO(!__TYPE_IS_LL(t) && sizeof(t) > sizeof(long))
 
 
+#ifdef CONFIG_128BITS_PTE
 asmlinkage long sys_disable_pte_meta(unsigned long addr);
 asmlinkage long sys_enable_pte_meta (unsigned long addr);
 asmlinkage long sys_get_pte_meta(unsigned long addr);
 asmlinkage long sys_set_pte_meta(unsigned long addr,u64 meta_val, int type);
+#endif
 
 #ifdef CONFIG_FTRACE_SYSCALLS
 #define __SC_STR_ADECL(t, a)	#a

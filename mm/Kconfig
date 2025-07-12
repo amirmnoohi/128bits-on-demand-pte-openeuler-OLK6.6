@@ -1259,6 +1259,22 @@ config PTE_MARKER_UFFD_WP
 	  purposes.  It is required to enable userfaultfd write protection on
 	  file-backed memory types like shmem and hugetlbfs.
 
+config 128BITS_PTE
+	bool "128-bit Page Table Entry metadata support"
+	depends on MMU && 64BIT
+	default n
+	help
+	  This option enables 128-bit Page Table Entry support that allows
+	  storing metadata alongside standard 64-bit PTEs. When enabled,
+	  page tables can be expanded from 4KiB to 8KiB to accommodate
+	  metadata storage. This feature provides system calls for enabling,
+	  disabling, and managing PTE metadata.
+
+	  The expansion is indicated by setting bit 58 in the PMD entry.
+	  Only processes with CAP_SYS_ADMIN privilege can use this feature.
+
+	  If unsure, say N.
+
 config USERSWAP
 	bool "Enable User Swap"
 	depends on MMU && USERFAULTFD

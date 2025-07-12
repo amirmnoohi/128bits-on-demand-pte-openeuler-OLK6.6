@@ -27,6 +27,8 @@
 #include <linux/smp.h>
 #include <linux/sched/mm.h>
 
+#ifdef CONFIG_128BITS_PTE
+
 /* ------------------------------------------------------------------ */
 /* 469  enable_pte_meta                                               */
 /* ------------------------------------------------------------------ */
@@ -456,3 +458,5 @@ out_unlock:
     // Return packed value: (type<<63 | meta)
     return ((u64)type << 63) | (meta_val & ~(1ULL << 63));
 }
+
+#endif /* CONFIG_128BITS_PTE */
