@@ -133,8 +133,8 @@ struct cachestat;
 #ifdef CONFIG_128BITS_PTE
 asmlinkage long sys_disable_pte_meta(unsigned long addr);
 asmlinkage long sys_enable_pte_meta (unsigned long addr);
-asmlinkage long sys_get_pte_meta(unsigned long addr);
-asmlinkage long sys_set_pte_meta(unsigned long addr,u64 meta_val, int type);
+asmlinkage long sys_get_pte_meta(unsigned long addr, void __user *buffer);
+asmlinkage long sys_set_pte_meta(unsigned long addr, int mdp, void __user *meta_data);
 #endif
 
 #ifdef CONFIG_FTRACE_SYSCALLS
